@@ -1,0 +1,37 @@
+{
+    "event": "finished_interaction",
+    "sessionId": "",
+    "properties": {
+        "interactionId": "59ad2e9c6ea3200001fa5b73",
+        "slidesCount": "1",
+        "version": "7",
+        "performanceTimestamp": "",
+        "feedSequence": "0",
+        "summaryTemplate": "default-default",
+        "publisherId": "561ebfc5495c869d5f9605ae",
+        "channelId": "561ebfc5495c869d5f9605ae",
+        "canonicalUrl": "https://www.stuff.co.nz/national/politics/96490760/who-won-the-second-leaders-debate",
+        "interactionType": "editorial",
+        "iframeType": "friendlyIframe",
+        "videoCampaignId": "5938f2a7fd78f60f00680b64",
+        "videoCustomParam": "7.6",
+        "referrer": "https://www.stuff.co.nz/national/politics/96490760/who-won-the-second-leaders-debate",
+        "voicrType": "multi poll two",
+        "creatorId": "561ebfa87d4852f60f1fd083"
+    },
+    "metadata": {
+        "browser": "chrome",
+        "os": "windows",
+        "device": "unknown",
+        "browserVersion": "60.0.3112.113",
+        "referrer": "https://www.stuff.co.nz/national/politics/96490760/who-won-the-second-leaders-debate",
+        "current_url": "https://www.stuff.co.nz/national/politics/96490760/who-won-the-second-leaders-debate?sdk=3.0.54s&canonicalUrl=https%3A%2F%2Fwww.stuff.co.nz%2Fnational%2Fpolitics%2F96490760%2Fwho-won-the-second-leaders-debate&type=editorial&iframeType=friendlyIframe&platform=desktop",
+        "screenHeight": "1050",
+        "screenWidth": "1680",
+        "language": "en-US",
+        "interaction_id": "59ad2e9c6ea3200001fa5b73",
+        "voicr_type": "multi poll two",
+        "publisher_id": "561ebfc5495c869d5f9605ae",
+        "creatorId": "561ebfa87d4852f60f1fd083"
+    }
+}
