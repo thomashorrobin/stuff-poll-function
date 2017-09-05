@@ -1,4 +1,3 @@
-const request = require('request');
 const fs = require('fs');
 const pre = require('./jacinda_pre_1.json');
 const picked = require('./jacinda_picked_1.json');
