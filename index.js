@@ -1,14 +1,14 @@
 const { createGuid, createRandomTimestamp, createRandomIPAddress } = require('./util');
 const { pre, pick, post } = require('./httpcalls');
 
-let errors = {
-    pre: null,
-    pick: null,
-    post: null
-}
-
-function sendRequest(answer, answerId) {
+function sendRequest(answer, answerId, callback) {
     let sessionId = createGuid();
+    
+    let errors = {
+        pre: null,
+        pick: null,
+        post: null
+    }
 
     setTimeout(() => {
         pre(sessionId, err => {
@@ -25,6 +25,7 @@ function sendRequest(answer, answerId) {
     setTimeout(() => {
         post(sessionId, err => {
             errors.post = err;
+            callback(errors);
         });
     }, 150);
 }
@@ -36,8 +37,7 @@ function sendRequest(answer, answerId) {
  * @param {!Object} res Cloud Function response context.
  */
 exports.helloWorld = function helloWorld(req, res) {
-    sendRequest(req.body.answer_text, req.body.answer_guid);
-    setTimeout(() => {
-        res.status(200).send(JSON.stringify(errors));
-    }, 250);
+    sendRequest(req.body.answer_text, req.body.answer_guid, err => {
+        res.status(200).send(JSON.stringify(err))
+    });
   };
