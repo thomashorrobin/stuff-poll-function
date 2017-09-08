@@ -14,5 +14,5 @@ module.exports.createRandomIPAddress = () => {
 }
 
 module.exports.createRandomlyDistributedDeploymentTime = () => {
-    return Math.floor(((Math.random() * 7000) + (Math.random() * 7000)) * 1);
+    return Math.floor(((Math.random() * 7000) + (Math.random() * 7000)) * 150);
 }
