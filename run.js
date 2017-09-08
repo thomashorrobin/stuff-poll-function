@@ -18,8 +18,11 @@ for (var i = 0; i < 5; i++) {
 function sendRequest(answer_text, answer_guid) {
     let message = `Vote for ${answer_text} (${answer_guid})`;
     let payload = { answer_text, answer_guid, message }
-    request.post('https://us-central1-stuff-nzherald-poll-spamer.cloudfunctions.net/function-2', { json: payload }, (data) => {
-        console.log(message);
-        console.log(data);
+    request.post('https://us-central1-stuff-nzherald-poll-spamer.cloudfunctions.net/function-2', { json: payload }, (errors) => {
+        if (errors.pre == null && errors.pick == null && errors.post == null) {
+            console.log(`Vote placed for ${answer_text} (${answer_guid}) has returned with no errors`);
+        } else {
+            console.log(errors);
+        }
     });
 }
