@@ -1,5 +1,5 @@
 const { createGuid, createRandomTimestamp, createRandomIPAddress } = require('./util');
-const { pre, pick, post } = require('./httpcalls');
+const { pre, pick, post, recomendation } = require('./httpcalls');
 
 function sendRequest(answer, answerId, callback) {
     let sessionId = createGuid();
@@ -7,7 +7,9 @@ function sendRequest(answer, answerId, callback) {
     let errors = {
         pre: null,
         pick: null,
-        post: null
+        post: null,
+        recomendation_one: null,
+        recomendation_two: null
     }
 
     setTimeout(() => {
@@ -15,12 +17,20 @@ function sendRequest(answer, answerId, callback) {
             errors.pre = err;
         });
     }, 50);
+
+    setTimeout(recomendation, 75, (responce) => {
+        errors.recomendation_one = responce;
+    });
     
     setTimeout(() => {
         pick(sessionId, answer, answerId, err => {
             errors.pick = err;
         });
     }, 100);
+    
+    setTimeout(recomendation, 125, (responce) => {
+        errors.recomendation_two = responce;
+    });
         
     setTimeout(() => {
         post(sessionId, err => {
