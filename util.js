@@ -5,6 +5,13 @@ module.exports.createGuid = () => {
     });
 }
 
+module.exports.createGuidNoDash = () => { 
+    return "xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx".replace(/[xy]/g, function (t) { 
+        var e = 16 * Math.random() | 0; 
+        return ("x" == t ? e : 3 & e | 8).toString(16) 
+    });
+}
+
 module.exports.createRandomTimestamp = () => {
     return (30000 + Math.random() * 10000).toString();
 }
@@ -14,5 +21,5 @@ module.exports.createRandomIPAddress = () => {
 }
 
 module.exports.createRandomlyDistributedDeploymentTime = () => {
-    return Math.floor(((Math.random() * 7000) + (Math.random() * 7000)) * 150);
+    return 1; //Math.floor(((Math.random() * 7000) + (Math.random() * 7000)) * 150);
 }
