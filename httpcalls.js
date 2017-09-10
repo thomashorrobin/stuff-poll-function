@@ -89,3 +89,27 @@ module.exports.post = (sessionId, callback) => {
         method: 'POST'
     }, callback);
 };
+
+module.exports.recomendation = (callback) => {
+    request('https://recommendation.apester.com/recommend?uri=&page=1&pageSize=3&integrationType=smart&channelId=561ebfc5495c869d5f9605ae&mediaId=59ad2e9c6ea3200001fa5b73', {
+        method: 'OPTIONS',
+        headers: {
+            'Host': 'recommendation.apester.com',
+            'Connection': 'keep-alive',
+            'Access-Control-Request-Method': 'GET',
+            'Origin': 'https://www.stuff.co.nz',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+            'Access-Control-Request-Headers': 'sessionid',
+            'Accept': '*/*',
+            'Referer': 'https://www.stuff.co.nz/national/politics/96490760/Who-won-the-second-leaders-debate?sdk=3.0.55s&canonicalUrl=https%3A%2F%2Fwww.stuff.co.nz%2Fnational%2Fpolitics%2F96490760%2FWho-won-the-second-leaders-debate%3Fsdk%3D3.0.55s%26canonicalUrl%3Dhttps%3A%2F%2Fwww.stuff.co.nz%2Fnational%2Fpolitics%2F96490760%2FWho-won-the-second-leaders-debate%26type%3Deditorial%26iframeType%3DfriendlyIframe%26platform%3Ddesktop&type=editorial&iframeType=friendlyIframe&platform=desktop',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'en-US,en;q=0.8'
+        }
+    }, (err, data) => {
+        if (err) {
+            callback(err);
+        } else {
+            callback(data);
+        }
+    })
+}
