@@ -1,4 +1,4 @@
-const { createGuid, createRandomTimestamp, createRandomIPAddress } = require('./util');
+const { createGuid, } = require('./util');
 const { pre, pick, post, recomendation, interaction_submission_options, interaction_submission_post } = require('./httpcalls');
 
 function sendRequest(answer, answerId, callback) {
