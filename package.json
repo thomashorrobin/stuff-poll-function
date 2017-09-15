@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node run.js"
+    "start": "node run_local.js"
   },
   "dependencies": {
     "request": "^2.81.0"
